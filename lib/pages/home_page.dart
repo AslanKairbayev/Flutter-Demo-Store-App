@@ -1,4 +1,4 @@
-import 'package:demo_app/models/Product.dart';
+import 'package:demo_app/models/Product2.dart';
 import 'package:demo_app/widgets/bottom_bar.dart';
 import 'package:demo_app/widgets/catalog.dart';
 import 'package:demo_app/widgets/item_card.dart';
