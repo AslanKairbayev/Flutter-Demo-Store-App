@@ -1,14 +1,15 @@
-import 'package:demo_app/models/Cart.dart';
-import 'package:demo_app/models/Product2.dart';
-import 'package:demo_app/pages/cart_page.dart';
+import 'package:demo_app/presentation/models/Cart.dart';
+import 'package:demo_app/presentation/models/ProductProvider.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 
-class ItemPage extends StatelessWidget {
+import 'cart_page.dart';
+
+class ProductPage extends StatelessWidget {
   final String productId;
 
-  ItemPage({Key key, this.productId}) : super(key: key);
+  ProductPage({Key key, this.productId}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

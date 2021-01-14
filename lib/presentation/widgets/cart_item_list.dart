@@ -1,7 +1,8 @@
-import 'package:demo_app/models/Cart.dart';
-import 'package:demo_app/widgets/cart_item.dart';
+import 'package:demo_app/presentation/models/Cart.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+
+import 'cart_item.dart';
 
 class CartItemList extends StatelessWidget {
   final CartDataProvider cartData;

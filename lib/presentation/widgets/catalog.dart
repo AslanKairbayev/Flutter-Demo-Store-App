@@ -1,4 +1,4 @@
-import 'package:demo_app/pages/catalog_page.dart';
+import 'package:demo_app/presentation/pages/catalog_page.dart';
 import 'package:flutter/material.dart';
 
 class CatalogListTile extends StatelessWidget {

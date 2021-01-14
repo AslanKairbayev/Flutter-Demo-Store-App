@@ -6,11 +6,12 @@ class Product {
   final String imgUrl;
   final color;
 
-  Product(
-      {this.id,
-      this.title,
-      this.description,
-      this.price,
-      this.imgUrl,
-      this.color});
+  Product({
+    this.id,
+    this.title,
+    this.description,
+    this.price,
+    this.imgUrl,
+    this.color,
+  });
 }

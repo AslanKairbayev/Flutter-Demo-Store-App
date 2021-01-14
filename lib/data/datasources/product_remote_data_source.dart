@@ -1,24 +1,11 @@
-import 'dart:collection';
-import 'package:flutter/widgets.dart';
+import 'package:demo_app/domain/entities/Product.dart';
 
-class Product with ChangeNotifier {
-  final String id;
-  final String title;
-  final String description;
-  final num price;
-  final String imgUrl;
-  final color;
-
-  Product(
-      {@required this.id,
-      @required this.title,
-      @required this.description,
-      @required this.price,
-      @required this.imgUrl,
-      @required this.color});
+abstract class ProductRemoteDataSource {
+  Future<List<Product>> getProducts();
+  Future<Product> getProductById(String productId);
 }
 
-class ProductDataProvider with ChangeNotifier {
+class FakeProductRemoteDataSourceImpl implements ProductRemoteDataSource {
   List<Product> _items = [
     Product(
       id: 'p3',
@@ -54,8 +41,13 @@ class ProductDataProvider with ChangeNotifier {
     )
   ];
 
-  UnmodifiableListView<Product> get items => UnmodifiableListView(_items);
+  @override
+  Future<List<Product>> getProducts() async {
+    return _items;
+  }
 
-  Product getElementById(String id) =>
-      _items.singleWhere((element) => element.id == id);
+  @override
+  Future<Product> getProductById(String productId) async {
+    return _items.singleWhere((product) => product.id == productId);
+  }
 }

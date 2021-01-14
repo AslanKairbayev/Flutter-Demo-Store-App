@@ -30,10 +30,12 @@ dependencies:
   cupertino_icons: ^1.0.0
   provider: ^4.3.2+3 
   google_fonts: ^1.1.1
+  get_it: ^5.0.4
 
 dev_dependencies:
   flutter_test:
-    sdk: flutter
+    sdk: flutter    
+ 
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec

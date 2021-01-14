@@ -1,6 +1,6 @@
-import 'package:demo_app/models/Cart.dart';
-import 'package:demo_app/pages/cart_page.dart';
-import 'package:demo_app/pages/item_page.dart';
+import 'package:demo_app/presentation/models/Cart.dart';
+import 'package:demo_app/presentation/pages/cart_page.dart';
+import 'package:demo_app/presentation/pages/product_page.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -33,8 +33,8 @@ class BottomBar extends StatelessWidget {
                   child: GestureDetector(
                     onTap: () {
                       Navigator.of(context).push(MaterialPageRoute(
-                        builder: (context) =>
-                            ItemPage(productId: cartItems.keys.toList()[index]),
+                        builder: (context) => ProductPage(
+                            productId: cartItems.keys.toList()[index]),
                       ));
                     },
                     child: Stack(

@@ -1,6 +1,6 @@
-import 'package:demo_app/models/Cart.dart';
-import 'package:demo_app/models/Product2.dart';
-import 'package:demo_app/pages/item_page.dart';
+import 'package:demo_app/presentation/models/Cart.dart';
+import 'package:demo_app/presentation/models/ProductProvider.dart';
+import 'package:demo_app/presentation/pages/product_page.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -9,7 +9,7 @@ class ItemCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final product = Provider.of<Product>(context, listen: false);
+    final product = context.select((ProductProvider value) => value);
 
     return Container(
       width: 150,
@@ -26,7 +26,7 @@ class ItemCard extends StatelessWidget {
           GestureDetector(
             onTap: () {
               Navigator.of(context).push(MaterialPageRoute(
-                builder: (context) => ItemPage(productId: product.id),
+                builder: (context) => ProductPage(productId: product.id),
               ));
             },
             child: Column(

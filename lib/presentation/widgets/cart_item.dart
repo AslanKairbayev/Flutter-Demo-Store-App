@@ -1,5 +1,5 @@
-import 'package:demo_app/models/Cart.dart';
-import 'package:demo_app/pages/item_page.dart';
+import 'package:demo_app/presentation/models/Cart.dart';
+import 'package:demo_app/presentation/pages/product_page.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -16,8 +16,8 @@ class CartItem extends StatelessWidget {
         leading: InkWell(
           onTap: () {
             Navigator.of(context).push(MaterialPageRoute(
-              builder: (context) =>
-                  ItemPage(productId: cartData.cartItems.keys.toList()[index]),
+              builder: (context) => ProductPage(
+                  productId: cartData.cartItems.keys.toList()[index]),
             ));
           },
           child: Container(

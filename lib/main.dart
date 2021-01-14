@@ -1,11 +1,14 @@
-import 'package:demo_app/models/Cart.dart';
-import 'package:demo_app/models/Product2.dart';
-import 'package:demo_app/pages/home_page.dart';
+import 'package:demo_app/presentation/models/Cart.dart';
+import 'package:demo_app/presentation/models/ProductProvider.dart';
+import 'package:demo_app/presentation/pages/home_page.dart';
+import 'package:demo_app/presentation/providers/home_page_provider.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
+import 'injection_container.dart' as di;
 
 void main() {
+  di.init();
   runApp(MyApp());
 }
 
@@ -21,6 +24,9 @@ class MyApp extends StatelessWidget {
         ),
         ChangeNotifierProvider<CartDataProvider>(
           create: (context) => CartDataProvider(),
+        ),
+        ChangeNotifierProvider<HomePageProvider>(
+          create: (_) => di.sl<HomePageProvider>(),
         ),
       ],
       child: MaterialApp(
