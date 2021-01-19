@@ -1,7 +1,7 @@
 import 'package:demo_app/domain/entities/Product.dart';
 
-class ProductModel extends Product {
-  ProductModel({
+class ProductData extends Product {
+  ProductData({
     String id,
     String title,
     String description,
@@ -17,8 +17,8 @@ class ProductModel extends Product {
           color: color,
         );
 
-  factory ProductModel.fromJson(Map<String, dynamic> json) {
-    return ProductModel(
+  factory ProductData.fromJson(Map<String, dynamic> json) {
+    return ProductData(
         id: json['id'],
         title: json['title'],
         description: json['description'],

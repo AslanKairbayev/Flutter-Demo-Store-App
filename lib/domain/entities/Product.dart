@@ -3,6 +3,7 @@ class Product {
   final String title;
   final String description;
   final num price;
+  final String category;
   final String imgUrl;
   final color;
 
@@ -11,6 +12,7 @@ class Product {
     this.title,
     this.description,
     this.price,
+    this.category,
     this.imgUrl,
     this.color,
   });

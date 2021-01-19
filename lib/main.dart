@@ -1,14 +1,12 @@
-import 'package:demo_app/presentation/models/Cart.dart';
-import 'package:demo_app/presentation/models/ProductProvider.dart';
-import 'package:demo_app/presentation/pages/home_page.dart';
-import 'package:demo_app/presentation/providers/home_page_provider.dart';
+import 'package:demo_app/presentation/screens/home/home_screen.dart';
+import 'package:demo_app/presentation/screens/cart/cart_view_model.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
-import 'injection_container.dart' as di;
+import 'injection_container.dart';
 
 void main() {
-  di.init();
+  setupServiceLocator();
   runApp(MyApp());
 }
 
@@ -19,27 +17,21 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiProvider(
       providers: [
-        ChangeNotifierProvider<ProductDataProvider>(
-          create: (context) => ProductDataProvider(),
-        ),
-        ChangeNotifierProvider<CartDataProvider>(
-          create: (context) => CartDataProvider(),
-        ),
-        ChangeNotifierProvider<HomePageProvider>(
-          create: (_) => di.sl<HomePageProvider>(),
+        ChangeNotifierProvider<CartViewModel>(
+          create: (context) => serviceLocator<CartViewModel>(),
         ),
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
         title: 'Demp App',
         theme: ThemeData(
-          primarySwatch: Colors.amber,
+          primarySwatch: Colors.indigo,
           backgroundColor: Colors.white,
           textTheme: GoogleFonts.marmeladTextTheme(
             Theme.of(context).textTheme,
           ),
         ),
-        home: HomePage(),
+        home: HomeScreen(),
       ),
     );
   }
